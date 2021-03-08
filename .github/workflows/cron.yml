@@ -15,3 +15,9 @@ jobs:
       - name: run action script
         run: |
           yarn action
+        env:
+          BOT_TOKEN: ${secrets.BOT_TOKEN}
+          CHANNEL_ID: ${secrets.CHANNEL_ID}
+          FB_PROJECT_ID: ${secrets.FB_PROJECT_ID}
+          FB_PRIVATE_KEY: ${secrets.FB_PRIVATE_KEY}
+          FB_CLIENT_EMAIL: ${secrets.FB_CLIENT_EMAIL}
