@@ -1,7 +1,8 @@
-name: keyboard cron
+name: on push flow
 on:
-  schedule:
-    - cron: "30 10-23/2 * * *"
+  push:
+    branches:
+      - "main"
 jobs:
   cron:
     runs-on: ubuntu-latest
