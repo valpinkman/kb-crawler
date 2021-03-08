@@ -1,0 +1,17 @@
+name: keyboard cron
+on:
+  schedule:
+    - cron: "30 10-23/2 * * *"
+  push:
+    branches:
+      - "main"
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+      - name: intall packages
+        run: |
+          yarn --frozen-lockfile
+      - name: run action script
+        run: |
+          yarn action
