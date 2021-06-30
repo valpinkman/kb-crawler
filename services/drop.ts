@@ -24,7 +24,7 @@ async function main(): Promise<CrawlResult[]> {
         .closest('[class*="SharedContentBlocks__section__"]')
         .prev();
       const imgwrapper = $(parent).find("div").first();
-      const css = imgwrapper.css("background-image");
+      const css = imgwrapper.css("background-image") as string;
       const [, url] = css.split("'");
       const img = `https:${url}`;
       res.push({ href, name, img });
