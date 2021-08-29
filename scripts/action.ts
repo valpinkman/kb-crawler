@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 config();
-import { Client, MessageEmbed } from "discord.js";
+import { Client, MessageEmbed, Intents, ColorResolvable } from "discord.js";
 import candykeysCrawl from "../services/candykeys";
 import dropCrawl from "../services/drop";
 import thekeyCrawl from "../services/thekey";
@@ -8,13 +8,15 @@ import kbdfansCrawl from "../services/kbdfans";
 import firestore from "../services/firebase";
 import { CrawlResult, ProviderType } from "../services/types";
 import wait from "../helpers/wait";
-const discord = new Client();
+const discord = new Client({
+  intents: [Intents.FLAGS.GUILDS],
+});
 
-const colorMap = {
-  candykeys: "#0099ff",
-  kbdfans: "#2e2e2e",
-  drop: "#fecf41",
-  thekeycompany: "#e4c646",
+const colorMap: Record<string, ColorResolvable> = {
+  candykeys: `#0099ff`,
+  kbdfans: `#2e2e2e`,
+  drop: `#fecf41`,
+  thekeycompany: `#e4c646`,
 };
 
 const nameMap = {

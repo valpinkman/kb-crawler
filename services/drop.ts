@@ -2,7 +2,6 @@ import cheerio from "cheerio";
 import axios from "axios";
 import { CrawlResult } from "./types";
 
-
 const url = "https://drop.com/featured/signature-series";
 
 async function main(): Promise<CrawlResult[]> {
@@ -31,7 +30,7 @@ async function main(): Promise<CrawlResult[]> {
     });
 
     return res;
-  } catch (error) {
+  } catch (error: any) {
     console.error("error", error.message);
     return res;
   }

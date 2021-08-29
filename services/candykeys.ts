@@ -1,6 +1,6 @@
 import cheerio from "cheerio";
 import axios from "axios";
-import { CrawlResult } from './types'
+import { CrawlResult } from "./types";
 
 const url = "https://candykeys.com/group-buys";
 
@@ -21,14 +21,14 @@ async function main(): Promise<CrawlResult[]> {
     });
 
     return res;
-  } catch (error) {
+  } catch (error: any) {
     console.error("error", error.message);
     return res;
   }
 }
 
 if (require.main === module) {
-  main().then(res => console.log(res))
+  main().then((res) => console.log(res));
 }
 
 export default main;

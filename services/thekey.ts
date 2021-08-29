@@ -23,7 +23,7 @@ async function main(): Promise<CrawlResult[]> {
     });
 
     return res;
-  } catch (error) {
+  } catch (error: any) {
     console.error("error", error.message);
     return res;
   }
