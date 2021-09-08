@@ -22,7 +22,13 @@ async function main(): Promise<CrawlResult[]> {
         .replace("/", "-");
       const wrapper = $(p).find(".image-wrap").first();
       const bgset = $(wrapper).find("div").data("bgset");
-      const url = (bgset as any).trim().split(",").pop().trim().split(" ")[0];
+      const url = (bgset as any)
+        .trim()
+        .split(",")
+        .filter(Boolean)
+        .pop()
+        .trim()
+        .split(" ")[0];
       const img = `https:${url}`;
 
       res.push({ href, name, img });

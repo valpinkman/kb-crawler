@@ -10,7 +10,7 @@
     "action": "ts-node scripts/action.ts",
     "candykeys": "ts-node services/candykeys.ts",
     "drop": "ts-node services/drop.ts",
-    "kdb": "ts-node services/kdbfans.ts",
+    "kbd": "ts-node services/kbdfans.ts",
     "thekey": "ts-node services/thekey.ts"
   },
   "devDependencies": {
