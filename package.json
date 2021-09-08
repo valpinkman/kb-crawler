@@ -14,7 +14,7 @@
     "thekey": "ts-node services/thekey.ts"
   },
   "devDependencies": {
-    "@types/node": "^16.7.5",
+    "@types/node": "^16.7.13",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
     "eslint": "^7.32.0",
@@ -25,7 +25,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",
-    "discord.js": "^13.1.0",
+    "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
     "firebase-admin": "^9.11.1"
   }
