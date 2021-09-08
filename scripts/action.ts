@@ -56,7 +56,7 @@ async function postNewMessage(
     .setURL(gb.href || "")
     .setThumbnail(gb.img || "")
     .setAuthor(author);
-  await chan.send(message);
+  await chan.send({ embeds: [message] });
   await wait();
 }
 
@@ -79,7 +79,6 @@ export default async function main(): Promise<void> {
         console.log(`Creating ${gb.name}`);
         await collection.doc(gb.name).set({ gb });
         console.log("Created");
-        console.log({ gb, key, chan });
         await postNewMessage(gb, key, chan);
       }
     }
