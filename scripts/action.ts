@@ -78,6 +78,7 @@ export default async function main(): Promise<void> {
       } else {
         console.log(`Creating ${gb.name} from ${key}`);
         await collection.doc(gb.name).set({ gb });
+        console.log({ gb });
         console.log("Created");
         await postNewMessage(gb, key, chan);
       }
