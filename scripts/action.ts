@@ -76,7 +76,7 @@ export default async function main(): Promise<void> {
       if (doc.exists) {
         console.log(`${gb.name} already added!`);
       } else {
-        console.log(`Creating ${gb.name}`);
+        console.log(`Creating ${gb.name} from ${key}`);
         await collection.doc(gb.name).set({ gb });
         console.log("Created");
         await postNewMessage(gb, key, chan);
